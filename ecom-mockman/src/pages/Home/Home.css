@@ -1,0 +1,287 @@
+/*  <link rel="stylesheet" href="https://windui.netlify.app/wind.css">
+    <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
+        <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+        rel="stylesheet"
+      />
+        <link rel="icon" type="image/x-icon" href="../images/windy-logo-white.png">
+    <link rel="stylesheet" href="./header.css">!
+    <link rel="stylesheet" href="../styles.css">!
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./product-page.css"> */
+    
+
+  @import url("../../App.css");  
+  @import url("https://windui.netlify.app/wind.css");
+.header-wrapper {
+    display: grid;
+  width: 100%;
+  min-width: 350px;
+background-color: var(--primary-black);
+color: white;
+  grid-gap: 1rem;
+grid-template-columns: repeat(5, [col-start] 1fr);
+    height: 3.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.header-logo{
+    margin: 2% 7%;
+    grid-column: col-start 1/ 3;
+}
+.header-logo *{
+    display: inline-block;
+}
+.header-logo-text{
+    font-weight: 300;
+}
+
+.header-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: col-start 5/6;
+    margin-right: 0.5rem;
+}
+
+.header-login{
+    border: 1px solid white;
+    color: white;
+    padding:  0.5rem ;
+    height: 60%;
+   margin: auto;
+   margin-right: 2rem;
+}
+.badge-wrapper{
+    margin: 0.5rem auto;
+}
+.header-icon{
+  display: flex;
+    margin: 0.5rem;
+    margin-left: 0.75rem;
+}
+
+.header-text-sm{
+    width: 80%;
+    margin: auto;
+}
+
+.badge-top-right{
+    display: inline-flex;
+    background-color: var(--CTA);
+    border-radius: 50%;
+    font-size: 0.8rem;
+    padding: 0.05rem 0.45rem;
+    margin-top: -2rem;
+    margin-left: -0.5rem;
+}
+.cta{ 
+    color: var(--CTA);
+}
+
+.header-logo:hover,.header-icon:hover{
+    cursor: pointer;
+}
+.home-banner{
+    display: flex; 
+    flex-direction: column;
+}
+.home-banner-img{
+    width: 100%;
+
+}
+.banner-text{
+margin-top:-27rem;
+text-align: center;
+min-width: 400px;
+margin-bottom: 25rem;
+
+}
+.banner-logo{
+    font-size: 4rem;
+    color: white; 
+  font-weight: 300;
+    display: inline;
+}
+.banner-logo-cta{
+    color: var(--CTA);
+  font-weight: 300;
+ font-size: 3rem !important;
+    margin: auto;
+    display: inline;
+}
+.banner-head{
+    display: block;
+     filter: brightness(130%);
+     background-image:  linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      );
+}
+.banner-logo-subtext {
+    display: block;
+     filter: brightness(130%);
+     background-image:  linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      );
+}
+.home-card-parent{
+    display: grid;
+    width: 90%;
+    height: 30rem;
+    margin: 1rem auto;
+    grid-gap: 1rem;
+  grid-template-columns: repeat(2, [col-start] 1fr);
+margin-bottom: 7rem;
+}
+.home-card-landscape{
+    width: 80%;
+    margin:  auto;
+    border: 2px solid whitesmoke;
+    border-radius: 1rem;
+}
+.home-card-landscape:hover{
+        background-color: whitesmoke;
+        cursor: pointer;
+}
+.home-card-landscape img{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.card-heading{
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 1rem 0.5rem;
+}
+.card-subheading{
+    padding: 0.5rem;
+    margin: 1rem 0.5rem;
+}
+
+/* Responsive */
+
+@media  screen and (max-width:1250px){
+    .banner-text{
+        margin-top: -20rem;
+    }
+    .banner-logo,.banner-logo-cta, .banner-logo-subtext p {
+        font-size: 3rem;
+      }
+}
+
+@media  screen and (max-width:880px){
+    .banner-text{
+        margin-top: -15rem;
+    }
+    .banner-logo,.banner-logo-cta, .banner-logo-subtext p {
+        font-size: 2.4rem;
+      }
+}
+@media  screen and (max-width:700px){
+    .banner-text{
+        margin-top: -12rem;
+    }
+    .banner-logo,.banner-logo-cta, .banner-logo-subtext p {
+        font-size: 1.8rem;
+      }
+}
+@media  screen and (max-width:485px){
+    .banner-text{
+        margin-top: -8rem;
+    }
+    .banner-logo,.banner-logo-cta, .banner-logo-subtext p {
+        font-size: 1.4rem;
+      }
+}
+
+
+/* Resp home cards */
+
+
+@media  screen and (max-width:1200px){
+    .home-card-parent{
+       
+    display: grid;
+    width: 60%;
+    height: 8rem;
+    margin: 1rem auto;
+    margin-top: -10rem;
+  grid-template-columns: repeat(2, [col-start] 1fr);
+/* margin-bottom: 20rem; */
+    }
+  
+    .footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    
+    }
+}
+
+@media  screen and (max-width:1000px){
+    .home-card-parent{
+       
+    display: grid;
+    width: 60%;
+    height: 8rem;
+    margin: 1rem auto;
+    margin-top: -10rem;
+  grid-template-columns: 1fr;
+margin-bottom: 50rem;
+    }
+    .home-card-landscape{
+        width: 60%;
+        margin:  auto;
+        border: 2px solid whitesmoke;
+        border-radius: 1rem;
+    }
+
+
+}
+@media  screen and (max-width:700px){
+    .home-card-parent{
+       
+    display: grid;
+    width: 60%;
+    height: 8rem;
+    margin: 1rem auto;
+    margin-top: -10rem;
+  grid-template-columns: 1fr;
+margin-bottom: 50rem;
+    }
+    .home-card-landscape{
+        width: 90%;
+        margin:  auto;
+        border: 2px solid whitesmoke;
+        border-radius: 1rem;
+    }
+
+
+}
+
+.card-img-wrapper
+{
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+.card-img-wrapper:hover img {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out 0.1s;
+  }
+  
+.card-img {
+   border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+}
