@@ -4,7 +4,7 @@ import {Routes,Route} from "react-router-dom"
 import Home from '../pages/Home/Home'
 import Login from "../pages/Auth/login"
 import Products from "../pages/Products/Products"
-import Cart from "../pages/Cart/cart"
+import Cart from "../pages/Cart/Cart"
 function PageRoutes() {
   return (
     <div><Routes>
