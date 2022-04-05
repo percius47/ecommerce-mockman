@@ -13,11 +13,11 @@ function Navbar() {
         {/* <!-- Nav --> */}
     <div class="header-wrapper">
         <div class="header-logo" >
-            <a href="./home.html" class="nav-logo-link">
+            <NavLink to="/" class="nav-logo-link">
         
                 <StormIcon className='cta'/>
             <h1 class="header-logo-text">Windy's</h1>
-        </a>
+        </NavLink>
         </div>
     
      
