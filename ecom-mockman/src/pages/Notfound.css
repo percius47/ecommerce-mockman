@@ -1,6 +1,9 @@
+.notfound-page{
+    height: 80vh;
+}
 .notfound-banner{
     width: 100%;
-    height: 70vh;
+    height: 73vh;
 }
 .notfound-text{
     margin: 1rem auto;
