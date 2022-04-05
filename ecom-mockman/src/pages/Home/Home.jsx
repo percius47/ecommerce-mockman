@@ -6,6 +6,7 @@ import StormIcon from '@mui/icons-material/Storm';
 import HomeBanner from "../../images/home-banner.jpg"
 import Food1 from "../../images/home-thali-1.jpg"
 import Food2 from "../../images/home-thali-2.jpg"
+import Footer from '../../Components/Footer';
 
 function Home() {
   return (
@@ -53,11 +54,7 @@ function Home() {
             </div>
           </div>
 
- <div class="footer">
-     <p class="footer-text">
-         Made with &lt;Wind-UI/&gt;.
-     </p>
- </div>
+<Footer/>
     </div>
   )
 }
