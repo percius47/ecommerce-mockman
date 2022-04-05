@@ -14,7 +14,7 @@ const ProductProvider=({children})=>{
     
       const toggleFilter = () => {
         setShowFilter((showFilter) => !showFilter);
-      };
+      }; 
     
 
       useEffect(() => {
