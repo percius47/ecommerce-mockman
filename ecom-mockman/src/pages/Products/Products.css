@@ -1,0 +1,244 @@
+.banner-img{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+.subnav-parent{
+    background-color: var(--gray-subnav);
+}
+.subnav{
+    color: white;
+    padding: 1rem 0.5rem;
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-top: 3.5rem;
+}
+.submenu-item{
+    cursor: pointer;
+    margin: 0.5rem auto;
+}
+.submenu-item:hover{
+    color: var(--CTA-light);
+}
+
+.home-content{
+    display: grid;
+    width: 100%;
+    grid-gap: 1rem;
+  grid-template-columns: repeat(6, [col-start] 1fr);
+    
+  }
+  .home-filter{
+      grid-column: col-start /2;
+      padding: 0.5rem;
+  }
+.home-product{
+    grid-column: col-start 2/-1;
+    padding: 0.5rem;
+}
+
+.filter-head{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-black);
+}
+.filter-clear{
+    color: var(--CTA);
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.category-head{
+    font-weight: 600;
+    margin: 1rem auto;
+}
+.category-parent{
+    display: flex;
+    flex-wrap: wrap;
+}
+.category-select{
+    color: white;
+    font-weight: 500;
+    background-color: var(--primary-black);
+    width: fit-content;
+    display: inline;
+    padding: 0.35rem;
+    margin: 0.25rem;
+    border-radius: 0.5rem;
+}
+.category-selected{
+    background-color: var(--CTA);
+}
+.product-h2{
+   margin: 0.5rem 0;
+    margin-left: 5%;
+
+}
+
+.v-nveg{
+    height: 1rem;
+    width: 1rem;
+    margin: 0.25rem;
+}
+.card {
+    display: flex;
+    width: 18rem;
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 0.5rem 0.25rem;
+  background-color: white;
+}
+
+.card-img-wrapper
+{
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+.card-img-wrapper:hover img {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out 0.1s;
+  }
+  
+.card-img {
+   border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.card-subtitle{
+    font-weight: 400;
+display: inline-block;
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    padding-left: 0;
+}
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--rating-green);
+    color: white;
+    border-radius: 0.5rem;
+    width: 4rem;
+    text-align: center;
+}
+.r-star{
+    background-color: transparent;
+    margin: auto 0.25rem;
+    color: white;
+}
+.rating-num{
+    display: inline;
+    margin: auto 0.25rem;
+    font-weight: 500;
+}
+.prod-abt{
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0.5rem;    
+}
+.card:hover{
+    background-color: whitesmoke;
+}
+.product-list{
+    display: grid;
+    width: 100%;
+    /* min-width: 480px; */
+    grid-gap: 1rem;
+  grid-template-columns: repeat(3, [col-start] 1fr);
+  
+}
+
+.hor-flex{
+    padding: 0.25rem 1rem;
+}
+.price{
+    display: flex;
+    align-items: center;
+text-align: center;
+}
+
+.card-btn button{
+    color: var(--CTA);
+    background-color: transparent;
+    border: 2px solid var(--CTA);
+    padding: 0.25rem 0.8rem;
+    border-radius: 0.8rem;
+}
+
+.home-footer{
+    width: 100%;
+    background-color: var(--primary-black);
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-text{
+    color: white;
+}
+.filter-clear:hover, .category-select:hover,.card:hover{
+    cursor: pointer;
+}
+/* category */
+.category-parent label{
+    display: block;
+    width: 100%;
+    margin: 0.25rem auto;
+}
+.category-check{
+
+    accent-color: var(--CTA);
+    padding: 2px;
+    margin-right: 4px;
+}
+.add-product{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1250px) {
+    .product-list{
+        display: grid;
+         grid-template-columns: repeat(2, [col-start] 1fr);
+    }
+    .card {
+                width: 15rem;    
+    }
+    
+    }
+    
+
+        @media screen and (max-width: 950px) {
+            .product-list{
+                display: grid;
+               
+              grid-template-columns: 1fr;
+              
+            }
+            .home-filter{
+                grid-column: col-start /3;
+                padding: 0.5rem;
+            }
+            .home-product{
+              grid-column: col-start 3/-1;
+              padding: 0.5rem;
+            }
+            .card {
+                width: 16rem;    
+    }
+   
+            }
+
+           /* slider color */
+           input[type="range"] {
+            accent-color: var(--CTA);
+          }
