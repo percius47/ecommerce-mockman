@@ -9,6 +9,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import { Toaster } from "react-hot-toast";
 import {NavLink} from "react-router-dom"
 import { useWishlist } from '../../contexts/wish-context'
+import FavCard from '../../Components/FavCard'
 
 function Favorites() {
   const {wishlistState}=useWishlist();
@@ -35,7 +36,7 @@ function Favorites() {
     
       wishlistState.map((item) => {
 
-               return <CartCard product={item} key={item._id} />
+               return <FavCard product={item} key={item._id} />
       })}
 
 {wishlistState.length===0 &&
