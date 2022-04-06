@@ -9,20 +9,29 @@ import ProductCategory from '../../Components/ProductCategory';
 
 import { useProducts } from '../../contexts/product-context';
 import ProductCard from '../../Components/ProductCard';
+import { getSortedProducts } from '../../utils/sorting';
+import { getCategoryProducts } from '../../utils/category';
+import { getNutritionProducts } from '../../utils/nutrition';
+import { getRangeProducts } from '../../utils/range';
 function Products() {
   const { productState, toggleFilter, showFilter, loading } = useProducts();
 
   const { 
     products,
-    brand,
+    nutrition,
     category,
     sortBy,
     rating,
     inStock,
     fastDelivery,
-    priceRange,
+    calorieRange,
   } = productState;
 
+
+const sortedProducts=getSortedProducts(products,sortBy);
+const categoryProducts=getCategoryProducts(sortedProducts,category);
+const NutritionProducts=getNutritionProducts(categoryProducts,nutrition)
+const RangeProducts=getRangeProducts(NutritionProducts,calorieRange);
 
 
   return (
@@ -57,17 +66,21 @@ function Products() {
     {/* Products listing grid */}
     <div class="home-product">
      
-    
-        <h2 class="product-h2">Showing {products.length} of {products.length} products.</h2>
+    {RangeProducts.length>0?
+       (<>
+            <h2 class="product-h2">Showing {RangeProducts.length} of {products.length} products.</h2>
    
         <div class="product-list">
-            {/* <!-- Cards --> */}
+         
            
-              {products.map((item)=>{
+              {RangeProducts.map((item)=>{
                 return <ProductCard product={item}/>
               })}
             
         </div>
+        </>
+        ):
+        (<h2 class="product-h2">Do not worry, we are shortly releasing a wider range of lip smacking and healthy food.</h2>)}
 
     </div>
 </div>

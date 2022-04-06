@@ -15,6 +15,7 @@ const sign = require("jwt-encode");
 
 export const signupHandler = function (schema, request) {
   const { email, password, ...rest } = JSON.parse(request.requestBody);
+
   try {
     // check if email already exists
     const foundUser = schema.users.findBy({ email });
@@ -28,19 +29,23 @@ export const signupHandler = function (schema, request) {
       );
     }
     const _id = uuid();
+  
     const newUser = {
       _id,
       email,
       password,
       createdAt: formatDate(),
-      updatedAt: formatDate(),
+      updatedAt: formatDate(), 
       ...rest,
       cart: [],
       wishlist: [],
     };
     const createdUser = schema.users.create(newUser);
+
     const encodedToken = sign({ _id, email }, process.env.REACT_APP_JWT_SECRET);
+
     return new Response(201, {}, { createdUser, encodedToken });
+
   } catch (error) {
     return new Response(
       500,
@@ -60,6 +65,7 @@ export const signupHandler = function (schema, request) {
 
 export const loginHandler = function (schema, request) {
   const { email, password } = JSON.parse(request.requestBody);
+  console.log("controller",email,password);
   try {
     const foundUser = schema.users.findBy({ email });
     if (!foundUser) {
@@ -70,6 +76,7 @@ export const loginHandler = function (schema, request) {
       );
     }
     if (password === foundUser.password) {
+      console.log(process.env.REACT_APP_JWT_SECRET);
       const encodedToken = sign(
         { _id: foundUser._id, email },
         process.env.REACT_APP_JWT_SECRET

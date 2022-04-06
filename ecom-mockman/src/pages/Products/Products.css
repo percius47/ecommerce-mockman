@@ -167,12 +167,26 @@ display: inline-block;
 text-align: center;
 }
 
-.card-btn button{
+.primary-btn{
     color: var(--CTA);
     background-color: transparent;
     border: 2px solid var(--CTA);
     padding: 0.25rem 0.8rem;
     border-radius: 0.8rem;
+    cursor: pointer;
+}
+.fonst-size-md{
+    font-size: 80%;
+}
+.secondary-btn{
+   
+        color: white;
+        background-color: var(--CTA);
+        border: 2px solid var(--CTA);
+        padding: 0.25rem 0.8rem;
+        border-radius: 0.8rem;
+        cursor: pointer;
+   
 }
 
 .home-footer{
@@ -204,7 +218,13 @@ text-align: center;
 .add-product{
     cursor: pointer;
 }
-
+.fav-icon{
+    background-color: transparent;
+    margin-right: 0;
+    margin-left: auto;
+   cursor: pointer;
+    color: var(--CTA);
+}
 @media screen and (max-width: 1250px) {
     .product-list{
         display: grid;

@@ -1,0 +1,16 @@
+.notfound-page{
+    height: 80vh;
+}
+.notfound-banner{
+    width: 100%;
+    height: 73vh;
+}
+.notfound-text{
+    margin: 1rem auto;
+    width: 90%;
+    color: var(--CTA);
+    margin-top: 5rem;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+}
