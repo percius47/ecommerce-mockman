@@ -20,7 +20,7 @@ function Favorites() {
       
 <div class="cart-parent">
   <div class="cart-heading">
-     <p>My Cart</p>
+     <p>My Favorites</p>
   </div>
   <div class="cart-location">
                 
