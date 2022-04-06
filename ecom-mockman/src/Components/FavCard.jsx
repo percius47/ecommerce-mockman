@@ -22,7 +22,9 @@ function FavCard({product}) {
     toggleWishlist,
     loading: wishlistLoading,
   } = useWishlist();
-  const { isAuth, navigate } = useAuth();
+  const { cartState, addToCartHandler } = useCart();
+  const { isAuth,navigate } = useAuth();
+  const itemInCart = cartState.find((item) => item._id === _id);
   const itemInWishlist = wishlistState.find((item) => item._id === _id);
   return (
     <div>
@@ -54,7 +56,18 @@ function FavCard({product}) {
                     <img class="v-nveg" src={nonvegIcon} alt="nonveg"/>}
                         <h6 class="card-subtitle">    {Cal} Cal | {description}</h6>
                       </div>
-                       </div>
+                      <button 
+        className={isAuth && itemInCart?'primary-btn':'secondary-btn font-size-md'}
+          onClick={() =>{
+            console.log("add clicked", isAuth,itemInCart,cartState);
+            isAuth && itemInCart ? navigate("/cart") : addToCartHandler(product)}
+          }
+        >
+        {isAuth && itemInCart ? "Added To Cart" : "Add To Cart"}</button>   
+
+                 
+                  
+                </div>
             </div>
     </div>
   )
