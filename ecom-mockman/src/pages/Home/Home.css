@@ -151,7 +151,7 @@ margin-bottom: 7rem;
     margin: 1rem auto;
     margin-top: -10rem;
   grid-template-columns: repeat(2, [col-start] 1fr);
-/* margin-bottom: 20rem; */
+margin-bottom: 20rem;
     }
   
     .footer{

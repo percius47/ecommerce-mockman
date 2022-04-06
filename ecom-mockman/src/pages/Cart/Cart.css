@@ -1,0 +1,214 @@
+.cart-parent{
+    padding: 1rem;
+    margin-top: 5rem;
+    height: auto;
+}
+.cart-heading{
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.7rem;
+    text-decoration: 2px solid var(--CTA) underline;
+}
+.cart-content{
+    display: grid;
+    width: 90%;
+    margin: 1rem auto;
+    grid-gap: 0.5rem;
+  grid-template-columns: repeat(2, [col-start] 1fr);
+margin-bottom: 3rem;
+}
+.cart-items{
+
+padding: 1rem;
+}
+.cart-card{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, [col-start] 1fr);
+ border: 1px solid var(--CTA-light);
+    background-color: whitesmoke;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+.cart-item-image{
+    width: 100%;
+    height: 100%;
+   border-radius: 0.5rem;
+   grid-column: col-start /2;
+    }
+    .cart-card-info{
+        grid-column: col-start 2/-1;
+    }
+    .flex-heading{
+        display: flex;
+        width: 90%;
+        justify-content: space-evenly;
+        align-items: center;
+        justify-content: center;
+    }
+    .cart-item-heading{
+        width: 80%;
+        font-weight: 400;
+        margin: 0.5rem 1rem ;
+    }
+    .cart-item-price{
+        margin: 0.5rem 1rem;
+    }
+    .cart-quantity{
+        margin: 0 1rem;
+        width: 80%;
+      display: inline-flex;
+
+    }
+    .cart-pl-min{
+        font-size: 2rem;
+        color: var(--CTA);
+        text-align: center;
+       
+    }
+    .cart-quantity-number{
+        padding:  0 0.5rem;
+        font-size: 1.2rem;
+        margin: auto 0.25rem;
+    }
+
+    .cart-delete-item{
+        display: inline;
+        margin-left: 5%;
+        padding: 0.5rem;
+        color: var(--CTA);
+    }
+.no-cart-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 1rem auto;
+}
+.prod-link{
+    font-weight: 500;
+    text-decoration: underline;
+    color: var(--primary-black);
+}
+    .cart-location{
+        display: flex;
+        color: black;
+        width: 30%;
+        margin: 1rem auto;
+        background-color: whitesmoke;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        align-items: center;
+    }
+    .location-icon{
+        color: var(--CTA);
+    }
+    .location-text{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .cart-total{
+        width: 80%;
+        margin: 2rem auto;
+        text-align: center;
+        height: fit-content;
+        padding: 1rem 0.5rem;
+        border: 3px solid var(--CTA);
+        background-color: whitesmoke;
+        border-radius: 1rem;
+    }
+
+    .bill-header{
+        font-size: 1.5rem;
+        margin: 1rem auto;
+        text-decoration: 3px solid var(--CTA) underline;
+    }
+.not-text{
+    color: var(--CTA);
+    font-weight: 400;
+    width: 80%;
+    margin: 1rem auto;
+   
+}
+    .bill-slab{ 
+      
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .cart-item-name{
+        padding: 1rem;
+      margin-left: 1rem;
+    }
+    .bill-item-price{
+        padding: 1rem ;
+        font-weight: 600;
+       
+    }
+    .coupon-name:hover{
+        color: var(--CTA);
+    }
+    .order-btn{
+        background-color: var(--CTA);
+        color: white;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        width: 80%;
+        font-size: 1rem;
+    }
+    .location-icon:hover, .edit-location:hover,.cart-item-image:hover,.cart-pl-min:hover,.cart-delete-item:hover,.order-btn:hover{
+        cursor: pointer;
+    }
+
+    /* Resp */
+    @media  screen and (max-width:1550px){
+      
+        .cart-item-image{
+            height: 70%;
+            width: 90%;
+            margin: 0 auto;
+        }
+       
+    
+   
+   
+    }
+   
+    @media  screen and (max-width:1200px){
+  .cart-content{
+      grid-template-columns: 1fr;
+
+  }
+
+  .bill-slab{
+      justify-content: space-around;
+  }
+  .cart-card{
+      width: 80%;
+      margin: 1rem auto;
+  }
+  .cart-item-image{
+    height: 80%;
+    width: 90%;
+}
+  .prod-abt{
+    display: flex;
+}
+.cart-total{
+    width: 95%;
+}
+.cart-location{
+    width: 80%;
+}
+   
+    }
+    @media  screen and (max-width:664px){
+        .cart-item-image{
+            height: 50%;
+            width: 80%;
+            margin: auto;
+        }
+
+    }
