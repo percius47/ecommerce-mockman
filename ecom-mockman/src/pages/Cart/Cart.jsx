@@ -14,7 +14,7 @@ function Cart() {
   const { cartState,totalProducts } = useCart();
 
   return (
-    <div>   <Helmet>
+    <div >   <Helmet>
     <title>Cart ({`${totalProducts}`})</title>
 </Helmet>
       <Toaster/>
@@ -32,7 +32,7 @@ function Cart() {
            <EditIcon className="edit-location"/>
             
     </div>
-    <div class="cart-content">
+    <div class="cart-content ">
         <div class="cart-items">       
         {
       
