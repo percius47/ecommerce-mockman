@@ -6,6 +6,7 @@ import Footer from '../../Components/Footer'
 import Navbar from '../../Components/Navbar'
 import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded';
 import EditIcon from '@mui/icons-material/Edit';
+import { Helmet } from 'react-helmet'
 import { Toaster } from "react-hot-toast";
 import {NavLink} from "react-router-dom"
 import { useWishlist } from '../../contexts/wish-context'
@@ -15,6 +16,9 @@ function Favorites() {
   const {wishlistState}=useWishlist();
   return (
     <div>
+       <Helmet>
+    <title>Favorites ({`${wishlistState.length}`})</title>
+</Helmet>
     <Toaster/>
       <Navbar/>
       

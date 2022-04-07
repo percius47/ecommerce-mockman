@@ -5,10 +5,12 @@ import Navbar from "../../Components/Navbar"
 
 import Footer from "../../Components/Footer"
 import  toast,{Toaster}  from "react-hot-toast";
+
 import { useAuth } from '../../contexts/auth-context'
 import { signupService } from '../../services/authServices/signupService'
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { Helmet } from 'react-helmet'
 function Signup() {
     const { setIsAuth, setToken, navigate } = useAuth();
     const [signup, setSignup] = useState({
@@ -64,7 +66,9 @@ function Signup() {
     
   return (
     <div className='auth-container'>
-       
+          <Helmet>
+                <title>Signup</title>
+            </Helmet>
         <Navbar/>
         <Toaster
   position="top-right"
