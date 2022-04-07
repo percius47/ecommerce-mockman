@@ -2,6 +2,7 @@ import React from 'react'
 import "./Home.css";
 import Navbar from "../../Components/Navbar"
 import {NavLink} from "react-router-dom"
+import { Helmet } from 'react-helmet';
 import StormIcon from '@mui/icons-material/Storm';
 import HomeBanner from "../../images/home-banner.jpg"
 import Food1 from "../../images/home-thali-1.jpg"
@@ -12,7 +13,9 @@ function Home() {
   return (
     <div>
   <Navbar/>
-
+  <Helmet>
+    <title>Windy's</title>
+</Helmet>
   
 
     {/* <!-- Hero-banner --> */}

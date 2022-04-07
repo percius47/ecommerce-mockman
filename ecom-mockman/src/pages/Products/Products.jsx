@@ -6,7 +6,7 @@ import ProductBanner from "../../images/banner-2.jpeg"
 
 
 import ProductCategory from '../../Components/ProductCategory';
-
+import { Helmet } from 'react-helmet';
 import { useProducts } from '../../contexts/product-context';
 import ProductCard from '../../Components/ProductCard';
 import { getSortedProducts } from '../../utils/sorting';
@@ -36,6 +36,9 @@ const RangeProducts=getRangeProducts(NutritionProducts,calorieRange);
 
   return (
     <div>
+       <Helmet>
+    <title>Foods</title>
+</Helmet>
         <Navbar/>
         {/* <!-- Sub nav --> */}
     <div class="subnav-parent">

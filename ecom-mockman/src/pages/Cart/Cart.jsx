@@ -6,17 +6,21 @@ import Footer from '../../Components/Footer'
 import Navbar from '../../Components/Navbar'
 import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded';
 import EditIcon from '@mui/icons-material/Edit';
+import { Helmet } from 'react-helmet'
 import { Toaster } from "react-hot-toast";
 import { useCart } from '../../contexts/cart-context'
 import {NavLink} from "react-router-dom"
 function Cart() {
-  const { cartState } = useCart();
+  const { cartState,totalProducts } = useCart();
+
   return (
-    <div>
+    <div >   <Helmet>
+    <title>Cart ({`${totalProducts}`})</title>
+</Helmet>
       <Toaster/>
         <Navbar/>
         
-<div class="cart-parent">
+<div class="cart-parent min-ht">
     <div class="cart-heading">
        <p>My Cart</p>
     </div>
@@ -28,7 +32,7 @@ function Cart() {
            <EditIcon className="edit-location"/>
             
     </div>
-    <div class="cart-content">
+    <div class="cart-content ">
         <div class="cart-items">       
         {
       

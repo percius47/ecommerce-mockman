@@ -8,6 +8,7 @@ import  toast,{Toaster}  from "react-hot-toast";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { loginService } from '../../services/authServices/loginService'
+import {Helmet} from "react-helmet"
 function Login() {
     const { setIsAuth, setToken, navigate } = useAuth();
 
@@ -63,6 +64,9 @@ function Login() {
   return (
       
     <div className='auth-container'>
+       <Helmet>
+                <title>Login</title>
+            </Helmet>
      <Toaster/>
         <Navbar/>
         <div class="login-card-wrapper">

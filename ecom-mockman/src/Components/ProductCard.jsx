@@ -24,7 +24,7 @@ function ProductCard({product}) {
     } = useWishlist();
 
     const { cartState, addToCartHandler,removeFromCartHandler } = useCart();
-    const { isAuth, navigate } = useAuth();
+    const { isAuth } = useAuth();
     const itemInCart = cartState.find((item) => item._id === _id);
     const itemInWishlist = wishlistState.find((item) => item._id === _id);
   return ( 
