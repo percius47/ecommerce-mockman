@@ -257,7 +257,15 @@ text-align: center;
     }
    
             }
+            @media screen and (max-width: 950px) {
+                .home-filter{
+                    display: none;
+                }
+                .home-product{
+                    grid-column: col-start /-1;
+                }
 
+            }
            /* slider color */
            input[type="range"] {
             accent-color: var(--CTA);

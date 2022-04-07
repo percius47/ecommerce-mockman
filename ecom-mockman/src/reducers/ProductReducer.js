@@ -7,7 +7,7 @@ const initialProducts = {
   nutrition:[],
   sortBy: false,
   rating: null,
-  calorieRange: 500,
+  calorieRange: 800,
  
 };
 

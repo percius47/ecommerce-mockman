@@ -64,10 +64,30 @@ grid-template-columns: repeat(5, [col-start] 1fr);
     margin-top: -2rem;
     margin-left: -0.5rem;
 }
-
+.menu-list{
+  display: none;
+  position: absolute;
+  top:3rem;
+  right:0;
+  padding: 1rem;
+  width: 15%;
+  text-align: center;
+  background-color: var(--primary-black) ;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+.mobile-menu-list{
+list-style: none;
+}
+.mobile-menu-list li{
+  margin: 0.5rem auto;
+}
 @media screen and (max-width: 664px) {
     .header-options{
-      display: none;
+ display: none;
+    }
+    .menu-list{
+      display: block;
     }
     .menu-mobile{
       display: flex;
@@ -78,4 +98,4 @@ grid-template-columns: repeat(5, [col-start] 1fr);
    
   
   }
-  
+ 
