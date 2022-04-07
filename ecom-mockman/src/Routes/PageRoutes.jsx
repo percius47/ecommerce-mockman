@@ -14,7 +14,8 @@ import Favorites from '../pages/Favorites/Favorites';
 
 function PageRoutes() {
   return (
-    <div><Routes>
+    <div>
+      <Routes>
     <Route path="/mockman" element={<Mockman/>}/>
     <Route path="/" element={<Home/>}/>
     <Route path='*' element={<Notfound/>}/>
@@ -26,7 +27,8 @@ function PageRoutes() {
     {/* <Route path='/logout' element={<Logout/>}/> */}
     <Route path="/products" element={<Products/>}/>
  
-  </Routes></div>
+  </Routes>
+  </div>
   )
 }
 

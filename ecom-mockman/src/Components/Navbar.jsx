@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Navbar.css"
 import ProfileImg from "../images/Profile-navbar.png"
 import CartIcon from "../images/cart-icon.png"
@@ -15,6 +15,7 @@ function Navbar() {
     const { isAuth, setIsAuth } = useAuth();
     const { totalProducts} = useCart();
     const {wishlistState}=useWishlist();
+    const [menuList,setMenuList]=useState(false);
   return (
     <div>
              
@@ -34,10 +35,74 @@ function Navbar() {
 
        <div class=" menu-mobile">
         <NavLink to="">
-       <MenuIcon/>
+       <MenuIcon
+       onClick={()=>setMenuList(!menuList)}
+       />
           </NavLink>
         </div>
+        {console.log("menu",menuList)}
+         {menuList && < div className="menu-list">
+            <ul className="mobile-menu-list">
 
+                <li className='mobile-menu-list-item'>
+                <NavLink to="/favorites">
+                <span  className='mobile-menu-list-item'>
+                    Favorites
+                    {isAuth && wishlistState.length>0 &&
+                  <span>  ({wishlistState.length})</span>
+                    }
+                 </span>
+                    </NavLink>
+                </li>
+                <li className='mobile-menu-list-item'>
+                <NavLink to="/cart">
+                <span  className='mobile-menu-list-item'>
+                    Cart
+                    {isAuth && wishlistState.length>0 &&
+                  <span> ( {totalProducts})</span>
+                    }
+                 </span>
+                    </NavLink>
+                </li>
+                <li  className='mobile-menu-list-item'>
+                   
+                   {isAuth?( 
+                    <NavLink to="/logout">
+                        <span
+                   
+                 
+                    onClick={() => {
+                      localStorage.removeItem("token");
+                      localStorage.setItem("isAuth", false);
+                      setIsAuth(false);
+                      toast.success("Logged out!")}}
+                   >
+                       Logout
+                       </span>
+                  
+                   </NavLink>):(
+                       <NavLink to="/login">
+                       <span  className='mobile-menu-list-item'
+                       
+                     
+                   
+                        onClick={() => {
+                          localStorage.removeItem("token");
+                          localStorage.setItem("isAuth", false);
+                          setIsAuth(false);
+                          toast.success("Logged in!")
+                   }}
+                       >
+                           Login
+                       </span>
+                       </NavLink>
+   
+                   )}
+                   </li>
+            </ul>
+        </div>} 
+
+                {/* desktop menu */}
             <div class="header-options">
              
                  {isAuth?( 
@@ -81,7 +146,7 @@ function Navbar() {
                     {/* <!-- Profile --> */}
                     <NavLink to="/favorites">
                        <FavoriteIcon/>
-                    {/* <img src={ProfileImg} alt="profile" class=" style-prefix-2jfr04 efaomd31" loading="lazy" width="26" height="26"/> */}
+                 
                     </NavLink>
                     {isAuth && wishlistState.length>0 &&
                     <span class=" badge-top-right ">{wishlistState.length}</span>}
