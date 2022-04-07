@@ -22,7 +22,7 @@ function Favorites() {
     <Toaster/>
       <Navbar/>
       
-<div class="cart-parent">
+<div class="cart-parent min-ht">
   <div class="cart-heading">
      <p>My Favorites</p>
   </div>
