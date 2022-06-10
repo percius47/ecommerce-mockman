@@ -1,10 +1,10 @@
 import React from 'react'
-
+import "./Footer.css"
 function Footer() {
   return (
   
-         <div class="footer">
-     <p class="footer-text">
+         <div class=" footer __footer">
+     <p class="footer-text __footer-text">
          Made with &lt;Wind-UI/&gt;.
      </p>
 

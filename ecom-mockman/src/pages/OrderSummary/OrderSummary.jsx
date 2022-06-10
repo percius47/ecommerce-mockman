@@ -2,6 +2,7 @@ import "./OrderSummary.css";
 import { useParams, Link } from "react-router-dom";
 import { useOrder } from "../../contexts/order-context";
 import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 
 
 export const OrderSummary = () => {
@@ -93,7 +94,7 @@ export const OrderSummary = () => {
           </div>
         )}
       </section>
-
+<Footer/>
 
     </div>
   );
