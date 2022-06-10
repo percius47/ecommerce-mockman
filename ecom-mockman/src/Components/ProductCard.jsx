@@ -64,7 +64,7 @@ function ProductCard({product}) {
         <button 
         className={isAuth && itemInCart?'primary-btn':'secondary-btn font-size-md'}
           onClick={() =>{
-            console.log("add clicked", isAuth,itemInCart,cartState);
+           
             isAuth && itemInCart ? removeFromCartHandler(product) : addToCartHandler(product)}
           }
         >

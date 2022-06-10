@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import "./Navbar.css"
 import ProfileImg from "../images/Profile-navbar.png"
 import CartIcon from "../images/cart-icon.png"
+import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {NavLink} from "react-router-dom"
 import StormIcon from '@mui/icons-material/Storm';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -40,7 +42,7 @@ function Navbar() {
        />
           </NavLink>
         </div>
-        {console.log("menu",menuList)}
+     
          {menuList && < div className="menu-list">
             <ul className="mobile-menu-list">
 
@@ -66,78 +68,39 @@ function Navbar() {
                 </li>
                 <li  className='mobile-menu-list-item'>
                    
-                   {isAuth?( 
-                    <NavLink to="/logout">
-                        <span
-                   
-                 
-                    onClick={() => {
-                      localStorage.removeItem("token");
-                      localStorage.setItem("isAuth", false);
-                      setIsAuth(false);
-                      toast.success("Logged out!")}}
-                   >
-                       Logout
-                       </span>
+                {isAuth?( 
+                 <NavLink to="/profile">
+                     <button
+                 className="header-login"
+              
+              
+       
+                >
+                   Account
+                    </button>
+               
+                </NavLink>):(
+                    <NavLink to="/login">
+                    <button class="header-login "
+                    
                   
-                   </NavLink>):(
-                       <NavLink to="/login">
-                       <span  className='mobile-menu-list-item'
-                       
-                     
-                   
-                        onClick={() => {
-                          localStorage.removeItem("token");
-                          localStorage.setItem("isAuth", false);
-                          setIsAuth(false);
-                          toast.success("Logged in!")
-                   }}
-                       >
-                           Login
-                       </span>
-                       </NavLink>
-   
-                   )}
+                
+                    >
+                  Login
+                    </button>
+                    </NavLink>
+
+                )}
                    </li>
             </ul>
         </div>} 
 
                 {/* desktop menu */}
+
+
             <div class="header-options">
              
-                 {isAuth?( 
-                 <NavLink to="/logout">
-                     <button
-                 className="header-login btn btn-outline"
-              
-              
-                 onClick={() => {
-                   localStorage.removeItem("token");
-                   localStorage.setItem("isAuth", false);
-                   setIsAuth(false);
-                   toast.success("Logged out!")}}
-                >
-                    Logout
-                    </button>
                
-                </NavLink>):(
-                    <NavLink to="/login">
-                    <button class="header-login btn btn-outline"
-                    
-                  
-                
-                     onClick={() => {
-                       localStorage.removeItem("token");
-                       localStorage.setItem("isAuth", false);
-                       setIsAuth(false);
-                    //    toast.success("Logged in!")
-                }}
-                    >
-                        Login
-                    </button>
-                    </NavLink>
-
-                )}
                
             <div class="header-icon">
                 {/* <!-- img --> */}
@@ -168,6 +131,29 @@ function Navbar() {
                     </div>
            
             </div>
+            {isAuth?( 
+                 <NavLink to="/profile">
+                     <button
+                 className="header-login"
+              
+              
+       
+                >
+                   <AccountCircleIcon/>
+                    </button>
+               
+                </NavLink>):(
+                    <NavLink to="/login">
+                    <button class="header-login "
+                    
+                  
+                
+                    >
+                    <LoginRoundedIcon/>
+                    </button>
+                    </NavLink>
+
+                )}
         </div>
     </div>
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAuth } from '../contexts/auth-context';
 import { useCart } from '../contexts/cart-context';
 import { getPrice } from '../utils/cartPrice';
 import { getTotalPrice } from '../utils/getTotalPrice';
@@ -6,7 +7,7 @@ import { getTotalPrice } from '../utils/getTotalPrice';
 export default function CartBill() {
     
         const { cartState } = useCart();
-      
+ const {navigate}=useAuth();
         const cartPrice = {
           deliveryCharges: 49, 
           price: getPrice(cartState),
@@ -16,11 +17,12 @@ export default function CartBill() {
         const totalPrice = getTotalPrice(
           cartState,
           cartPrice.price,
-         
-        )-Number(30);
+     
+         cartPrice.deliveryCharges
+        );
       
-    // console.log(cartState);
-    let totalBill=0;
+  
+  
   return (
     <div>
            <div class="cart-total">
@@ -35,13 +37,13 @@ export default function CartBill() {
            
            
             <div class="bill-slab">
-                <span class="cart-item-name">Tax & Delivery Charges</span>
-                <span class="bill-item-price">₹ 20.00</span>
+                <span class="cart-item-name">Delivery Charges</span>
+                <span class="bill-item-price">₹ 49.00</span>
             </div>
        
             <div class="bill-slab">
                 <span class="cart-item-name">Discount</span>
-                <span class="bill-item-price">-₹ 50.00
+                <span class="bill-item-price">-₹ 50
                     <span class="coupon-name">(WINDY500)</span>
                 </span>
               
@@ -53,7 +55,7 @@ export default function CartBill() {
             </div>
            
          
-                <button class="order-btn">Place Order</button>
+                <button class="order-btn"  onClick={() => navigate("/checkout")}>Checkout</button>
      
               
         </div>

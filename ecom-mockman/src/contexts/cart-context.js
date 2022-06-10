@@ -9,6 +9,8 @@ import {removeFromCart} from "../services/cartServices/removeFromCart"
 import {cartTotalProducts} from "../utils/totalCartItems"
 import {updateCart} from "../services/cartServices/updateCart"
 import { addToWishlist } from "../services/wishServices/addToWishlist";
+import { getPrice } from "../utils/cartPrice";
+import { getDiscountInPrice } from "../utils/getDiscount";
 const CartContext=createContext();
 const CartProvider=({children})=>{
     const [cartState, cartDispatch] = useReducer(cartReducer, []);
@@ -31,7 +33,11 @@ const CartProvider=({children})=>{
       }
     }
   }, [isAuth]);
-  
+  const cartPrice = {
+    deliveryCharges: 49,
+    price: getPrice(cartState),
+ 
+  };
   const addToCartHandler = async (product) => {
     if (isAuth) {
       setLoading(true);
@@ -64,13 +70,7 @@ const CartProvider=({children})=>{
     
     } else {
       setLoading(true);
-    //    cartState.reduce(
-    //     (a, b) => ({
-    //       ...a,
-    //       cartTotalProducts: a.cartTotalProducts + b.qty}),
-    //       {
-    //           cartTotalProducts:0,
-    //       });
+ 
       const { data, status } = await updateCart(product._id, token, type);
       setLoading(false);
 
@@ -107,7 +107,7 @@ const CartProvider=({children})=>{
         updateQtyHandler,
         moveToWishlistHandler,
         totalProducts,
-        // loading,
+       cartPrice
       }}>
         {children}
     </CartContext.Provider>

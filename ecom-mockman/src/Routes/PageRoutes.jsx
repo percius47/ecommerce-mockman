@@ -10,7 +10,13 @@ import Signup from '../pages/Auth/Signup';
 import Login from '../pages/Auth/Login';
 import Signout from '../pages/Auth/Signout';
 import Favorites from '../pages/Favorites/Favorites';
-
+import { PrivateRoute } from './PrivateRoute';
+import { UserAccount } from '../pages/UserAccount/UserAccount';
+import { UserProfile } from '../Components/UserProfile';
+import { OrderList } from '../Components/OrderList';
+import { AddressList } from '../Components/AddressList';
+import  {Checkout} from "../pages/Checkout/Checkout" 
+import { OrderSummary } from '../pages/OrderSummary/OrderSummary';
 
 function PageRoutes() {
   return (
@@ -19,12 +25,24 @@ function PageRoutes() {
     <Route path="/mockman" element={<Mockman/>}/>
     <Route path="/" element={<Home/>}/>
     <Route path='*' element={<Notfound/>}/>
+
+    <Route element={<PrivateRoute />}>
     <Route path='/cart' element={<Cart/>}/>
     <Route path='/favorites' element={<Favorites/>}/>
+    <Route path="/checkout" element={<Checkout />} />
+    <Route path="/order/:orderId" element={<OrderSummary />} />
+    <Route path="/profile" element={<UserAccount />}>
+             <Route path="" element={<UserProfile />} />
+           <Route path="orders" element={<OrderList />} />
+            <Route path="addresses" element={<AddressList />} /> 
+          </Route>
+
+    </Route>
+    
     <Route path='/signup' element={<Signup/>}/>
     <Route path='/logout' element={<Signout/>}/>
     <Route path='/login' element={<Login/>}/>
-    {/* <Route path='/logout' element={<Logout/>}/> */}
+
     <Route path="/products" element={<Products/>}/>
  
   </Routes>

@@ -1,4 +1,5 @@
 import { Server, Model, RestSerializer } from "miragejs";
+import { addNewAddressHandler, editAddressHandler, getAllAddressesHandler, removeAddressHandler } from "./backend/controllers/AddressController";
 import {
   loginHandler,
   signupHandler,
@@ -13,6 +14,7 @@ import {
   getAllCategoriesHandler,
   getCategoryHandler,
 } from "./backend/controllers/CategoryController";
+import { addOrdersHandler, getOrdersHandler } from "./backend/controllers/OrderController";
 import {
   getAllProductsHandler,
   getProductHandler,
@@ -38,6 +40,7 @@ export function makeServer({ environment = "development" } = {}) {
       user: Model,
       cart: Model,
       wishlist: Model,
+      orders:Model,
     },
 
     // Runs on the start of the server
@@ -49,7 +52,7 @@ export function makeServer({ environment = "development" } = {}) {
       });
 
       users.forEach((item) =>
-        server.create("user", { ...item, cart: [], wishlist: [] })
+        server.create("user", { ...item, cart: [], wishlist: [],orders:[] })
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
@@ -85,6 +88,16 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
       );
+      
+      // address routes (private)
+      this.get("/user/addresses", getAllAddressesHandler.bind(this));
+      this.post("/user/address", addNewAddressHandler.bind(this));
+      this.post("/user/address/:addressId", editAddressHandler.bind(this));
+      this.delete("/user/address/:addressId", removeAddressHandler.bind(this));
+
+      // order routes (private)
+      this.get("/user/order", getOrdersHandler.bind(this));
+      this.post("/user/order", addOrdersHandler.bind(this));
     },
   });
 }

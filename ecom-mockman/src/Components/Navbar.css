@@ -34,12 +34,13 @@ grid-template-columns: repeat(5, [col-start] 1fr);
 }
 
 .header-login{
-    border: 1px solid white;
+   background-color: var(--primary-black);
     color: white;
     padding:  0.5rem ;
     height: 60%;
    margin: auto;
-   margin-right: 2rem;
+   cursor: pointer;
+ 
 }
 .badge-wrapper{
     margin: 0.5rem auto;
@@ -69,12 +70,13 @@ grid-template-columns: repeat(5, [col-start] 1fr);
   position: absolute;
   top:3rem;
   right:0;
-  padding: 1rem;
-  width: 15%;
+ 
+  width: 20%;
   text-align: center;
   background-color: var(--primary-black) ;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
+
 }
 .mobile-menu-list{
 list-style: none;
@@ -87,7 +89,8 @@ list-style: none;
  display: none;
     }
     .menu-list{
-      display: block;
+      display: flex;
+      /* align-items: center; */
     }
     .menu-mobile{
       display: flex;

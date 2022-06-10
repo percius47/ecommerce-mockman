@@ -43,6 +43,7 @@ function Signup() {
     try {
       setLoading(true);
       const { data } = await signupService(signup.input);
+      console.log("signup data",data);
       setLoading(false);
       toast.success(`Hi, ${data.createdUser.firstname}!`, {
         icon: "👋"
@@ -182,15 +183,18 @@ function Signup() {
                   ) : null}
              
                 </div>
-        <div class="btn-flex">
-            {signup.pwdMatch &&  <NavLink  className="login-link"
+        <button class="btn-flex login-link"
+        type='submit'
+        >
+            {/* {signup.pwdMatch &&  <NavLink  className="login-link"
             
             to="/products"
             onClick={signupHandler}
             >
-            Continue
-        </NavLink>}
-      </div>
+          
+        </NavLink>} */}
+          Continue
+      </button>
       </form>
         </div>
         </div>

@@ -14,13 +14,12 @@ function CartCard({product}) {
   const {
     removeFromCartHandler,
     updateQtyHandler,
-    moveToWishlistHandler,
-    loading,
+ 
   } = useCart();
   const {
     wishlistState, 
     toggleWishlist,
-    loading: wishlistLoading,
+  
   } = useWishlist();
   const { isAuth, navigate } = useAuth();
   const itemInWishlist = wishlistState.find((item) => item._id === _id);

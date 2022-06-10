@@ -4,10 +4,14 @@
   --CTA-light: #fa749a;
   --gray-subnav:#393a3b;
   --rating-green:#24963f;
+  --border-radius:0.25rem;
+  --smoke:whitesmoke;
+  --border-dark:  #c0c0c0;
+  --box-shadow: 2px 2px 2px 0 var(var(--border-dark))
 }
 .footer{
   width: 100%;
-  position: relative;
+  position: relative; 
   bottom: 0;
   left: 0;
   right: 0;

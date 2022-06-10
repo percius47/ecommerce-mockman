@@ -4,8 +4,7 @@ import CartBill from '../../Components/CartBill'
 import CartCard from '../../Components/CartCard'
 import Footer from '../../Components/Footer'
 import Navbar from '../../Components/Navbar'
-import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded';
-import EditIcon from '@mui/icons-material/Edit';
+
 import { Helmet } from 'react-helmet'
 import { Toaster } from "react-hot-toast";
 import { useCart } from '../../contexts/cart-context'
@@ -24,14 +23,7 @@ function Cart() {
     <div class="cart-heading">
        <p>My Cart</p>
     </div>
-    <div class="cart-location">
-                  
-       <PlaceRoundedIcon className="location-icon"/>
-         
-            <span class="location-text">401, 5th main, 5th Cross, 2nd Main, RT Nagar, Bengaluru 403203.</span>
-           <EditIcon className="edit-location"/>
-            
-    </div>
+
     <div class="cart-content ">
         <div class="cart-items">       
         {

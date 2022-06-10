@@ -27,28 +27,20 @@ function Login() {
   
     const loginHandler = async (e) => {
       e.preventDefault();
-        console.log("login handler");
+ 
       try {
-       
-        setLoading(true);
-        console.log("login try",login.input);
+
+      
         const { data } = await loginService(login.input);
-        console.log("data",data);
-        setLoading(false);
+
+   
         toast.success(`Welcome back, ${data.foundUser.firstName}!`, {
-          icon: "👋",style: {
-            border: '1px solid #ff316d',
-            padding: '16px',
-            color: '#ff316d',
-          },
-          iconTheme: {
-            primary: '#ff316d',
-            secondary: '#FFFAEE',
-          },
+          icon: "👋",
         });
     
         localStorage.setItem("isAuth", true);
         localStorage.setItem("token", data.encodedToken);
+        localStorage.setItem("user", JSON.stringify(data.foundUser));
         setToken(data.encodedToken);
   
         setLogin({ ...login, input: { email: "", password: "" } });
@@ -70,7 +62,7 @@ function Login() {
      <Toaster/>
         <Navbar/>
         <div class="login-card-wrapper">
-    <div class="login-card">
+    <form class="login-card" onSubmit={loginHandler}>
         <h2 class="login-heading">Login</h2>
         <div class="login-inputs">
 
@@ -84,7 +76,7 @@ function Login() {
               onChange={loginInputHandler}
               required
             />
-            {/* <span class="inp-valid login-input-theme">Incorrect Email Address!!</span> */}
+  
             </div>
 
             <div class="login-input-element">
@@ -132,14 +124,30 @@ function Login() {
             Login
         </button>
             </div>
-
+            <div class="btn-flex">
+                <button className="login-link" 
+              type='submit'
+                onClick={() =>
+                  setLogin({
+                    ...login,
+                    input: {
+                      email: "guest@windys.com",
+                     password: "guest@windys",
+                    },
+                  })
+            
+                }
+                >
+            Login as Guest
+        </button>
+            </div>
             <div class="btn-flex">
                 <NavLink className="signup-link" to="/signup">
            Create New Account <span className=" link-col-cta">&gt;</span>
         </NavLink>
             </div>
      
-        </div>
+        </form>
     </div>
         <Footer/>
     </div>
