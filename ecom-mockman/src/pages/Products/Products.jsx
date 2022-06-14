@@ -42,7 +42,7 @@ const RangeProducts=getRangeProducts(NutritionProducts,calorieRange);
         <Navbar/>
         {/* <!-- Sub nav --> */}
     <div class="subnav-parent">
-    <div class="subnav">
+    {/* <div class="subnav">
         <span class="submenu-item">
             Breakfast
         </span>
@@ -55,7 +55,7 @@ const RangeProducts=getRangeProducts(NutritionProducts,calorieRange);
         <span class="submenu-item">
             Dinner
         </span>
-    </div>
+    </div> */}
 </div>
 
     {/* <!-- Hero-banner --> */}

@@ -17,7 +17,7 @@ function CartCard({product}) {
  
   } = useCart();
   const {
-    wishlistState, 
+    wishlistState,  
     toggleWishlist,
   
   } = useWishlist();

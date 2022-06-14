@@ -8,6 +8,7 @@ import { useAuth } from "../../contexts/auth-context";
 import { useCart } from "../../contexts/cart-context";
 import { useOrder } from "../../contexts/order-context";
 import { useAddress } from "../../contexts/address-context";
+import { clearCartService } from "../../services/cartServices/clearCartService";
 
 export const OrderDetails = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export const OrderDetails = () => {
     addressState: { addresses, selectedAddrId },
   } = useAddress();
   const { dispatchOrder } = useOrder();
-
+const {cartDispatch}=useCart();
 
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -81,14 +82,19 @@ cartPrice.deliveryCharges
           orderId,
           delivery: currentAddress,
         };
-        console.log("addorder service",orderData);
-        const { data, status } = await addOrderService(orderData, token);
        
+        const { data, status } = await addOrderService(orderData, token);
+        const resCart = await clearCartService(token);
 
-        if (status === 201) {
-          // setSelectedCoupon({});
+      
+        if(
+          status === 201 && 
+          resCart.status==201) {
+
           dispatchOrder({ type: "GET_ORDERS", payload: data.order });
           navigate(`/order/${orderId}`);
+
+          cartDispatch({ type: "SET_CART_DATA", payload: resCart.data.cart });
         }
       },
 

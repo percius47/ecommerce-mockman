@@ -49,7 +49,7 @@ const CartProvider=({children})=>{
         cartDispatch({ type: "SET_CART_DATA", payload: data.cart });
       }
     } else {
-      navigate("/login");
+      navigate("/login"); 
     }
   };
 
@@ -103,6 +103,7 @@ const CartProvider=({children})=>{
     return<CartContext.Provider  value={{
         cartState,
         addToCartHandler,
+        cartDispatch,
         removeFromCartHandler,
         updateQtyHandler,
         moveToWishlistHandler,

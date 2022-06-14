@@ -64,7 +64,34 @@ export const addItemToCartHandler = function (schema, request) {
     );
   }
 };
+// clear cart
+export const clearCartHandler = function (schema, request) {
+	const userId = requiresAuth.call(this, request);
+	try {
+		if (!userId) {
+			new Response(
+				404,
+				{},
+				{
+					errors: ["The email you entered is not Registered. Not Found error"],
+				}
+			);
+		}
 
+		this.db.users.update({ _id: userId }, { cart: [] });
+		const userCart = schema.users.findBy({ _id: userId }).cart;
+
+		return new Response(201, {}, { cart: userCart });
+	} catch (error) {
+		return new Response(
+			500,
+			{},
+			{
+				error,
+			}
+		);
+	}
+};
 /**
  * This handler handles removing items to user's cart.
  * send DELETE Request at /api/user/cart/:productId

@@ -33,16 +33,16 @@ function Cart() {
                  return <CartCard product={cartItem} key={cartItem._id} />
         })}
 
-{cartState.length===0 &&
-  <h2 className='not-text'>Sorry, you did not add anything!<NavLink to="/products" > Return to <span className='prod-link'>Foods.</span>  </NavLink></h2>
 
-}
         </div>
       
     {cartState.length>0 && <CartBill/>}
      
     </div>
-    
+    {cartState.length===0 &&
+  <h2 className='not-text'>Sorry, you did not add anything!<NavLink to="/products" > Return to <span className='prod-link'>Foods.</span>  </NavLink></h2>
+
+}
 </div>
 
 <Footer/>

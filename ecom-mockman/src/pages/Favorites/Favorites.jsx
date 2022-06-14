@@ -26,14 +26,7 @@ function Favorites() {
   <div class="cart-heading">
      <p>My Favorites</p>
   </div>
-  <div class="cart-location">
-                
-     <PlaceRoundedIcon className="location-icon"/>
-       
-          <span class="location-text">401, 5th main, 5th Cross, 2nd Main, RT Nagar, Bengaluru 403203.</span>
-         <EditIcon className="edit-location"/>
-          
-  </div>
+
   <div class="cart-content">
       <div class="cart-items">       
       {
@@ -43,16 +36,16 @@ function Favorites() {
                return <FavCard product={item} key={item._id} />
       })}
 
-{wishlistState.length===0 &&
-<h2 className='not-text'>Sorry, you did not add anything!<NavLink to="/products" > Return to <span className='prod-link'>Foods.</span>  </NavLink></h2>
 
-}
       </div>
     
   {/* {wishlistState.length>0 && <CartBill/>} */}
    
   </div>
-  
+  {wishlistState.length===0 &&
+<h2 className='not-text'>Sorry, you did not add anything!<NavLink to="/products" > Return to <span className='prod-link'>Foods.</span>  </NavLink></h2>
+
+}
 </div>
 
 <Footer/>

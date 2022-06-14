@@ -106,13 +106,14 @@ border: 2px solid var(--CTA);
     background-color: var(--CTA);
     color: white;
     text-align: center;
-    width: 70%;
+    width: 82%;
     padding: 0.5rem;
     border-radius: 0.25rem;
     margin: 0.5rem auto ;
     text-decoration: none;
     font-size: 1.2rem;
     cursor: pointer;
+    flex-grow: inherit;
 }
 .signup-link{
     background-color: transparent;
