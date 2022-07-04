@@ -179,21 +179,14 @@ function Signup() {
 
                  {/* end Input fields */}
                  {!signup.pwdMatch ? (
-                       <span class="inp-valid login-input-theme">Passwords do not match.</span>
+                       <span class="inp-valid login-input-theme">Passwords do not match!</span>
                   ) : null}
              
                 </div>
         <button class="btn-flex login-link"
         type='submit'
-        >
-            {/* {signup.pwdMatch &&  <NavLink  className="login-link"
-            
-            to="/products"
-            onClick={signupHandler}
-            >
-          
-        </NavLink>} */}
-          Continue
+        disabled={!signup.pwdMatch}
+        >  Continue
       </button>
       </form>
         </div>
