@@ -67,7 +67,7 @@ cartPrice.deliveryCharges
     }
 
     const options = {
-      key: "rzp_test_UzxBmv8QvVBPHP",
+      key: "rzp_test_5CJrG7vkWYRV67",
       amount: totalPrice*100,
       currency: "INR",
       name: "Windy's",
